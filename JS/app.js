@@ -1,8 +1,11 @@
+// Loading control
 const load = document.getElementById('loading-container');
 load.style.display = 'block';
 
+// Container load
 const container = document.getElementById('country-container');
 
+// Load all countries
 const loadCountries = () => {
     container.innerHTML = '';
     load.style.display = 'block';
@@ -10,8 +13,10 @@ const loadCountries = () => {
         .then(res => res.json())
         .then(data => showData(data))
 }
+// Page startup call all countries
 loadCountries();
 
+// Load Asia countries
 const loadAsia = () => {
     container.innerHTML = '';
     load.style.display = 'block';
@@ -19,6 +24,8 @@ const loadAsia = () => {
         .then(res => res.json())
         .then(data => showData(data))
 }
+
+// Load Africa countries
 const loadAfrica = () => {
     container.innerHTML = '';
     load.style.display = 'block';
@@ -26,6 +33,8 @@ const loadAfrica = () => {
         .then(res => res.json())
         .then(data => showData(data))
 }
+
+// Load Europe countries
 const loadEurope = () => {
     container.innerHTML = '';
     load.style.display = 'block';
@@ -33,6 +42,8 @@ const loadEurope = () => {
         .then(res => res.json())
         .then(data => showData(data))
 }
+
+// Load America countries
 const loadAmericas = () => {
     container.innerHTML = '';
     load.style.display = 'block';
@@ -40,6 +51,8 @@ const loadAmericas = () => {
         .then(res => res.json())
         .then(data => showData(data))
 }
+
+// Load Oceania countries
 const loadOceania = () => {
     container.innerHTML = '';
     load.style.display = 'block';
@@ -48,6 +61,7 @@ const loadOceania = () => {
         .then(data => showData(data))
 }
 
+// Display counties
 const showData = (data) => {
     // sorting the countries alphabetically
     data.sort((a, b) => {
@@ -62,6 +76,8 @@ const showData = (data) => {
         }
         return 0;
     });
+
+    // Loop all countries
     data.forEach(element => {
         try {
             const div = document.createElement('div');
@@ -87,8 +103,8 @@ const showData = (data) => {
                     <strong>TimeZone:</strong> ${element.timezones[0]}
                 </div>
                 <div class="card-footer text-center">
-                    <small class="text-muted"><a href="${element.maps.googleMaps}">
-                    <button class="btn btn-primary">Google Map</button>
+                    <small class="text-muted"><a target="__blank" href="${element.maps.googleMaps}">
+                    <button class="btn btn-primary">Find on Google Map</button>
                     </a> </small>
                 </div>
             </div>
