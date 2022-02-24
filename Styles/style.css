@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+body{
+    background-color: rgba(214, 255, 152, 0.5);
+}
+header h1{
+    font-family: 'Lobster', cursive;
+}
+.card-body{
+    background-color: rgba(255, 231, 170, 0.253);
+}
+.card-title{
+    color: rgb(158, 10, 10);
+}
+.card{
+    border-radius: 15px;
+}
